@@ -1,10 +1,10 @@
 pipeline {
     agent any
-
+    
     stages {
-        stage("Clonamos el repositorio") {
+        stage("Clonammos el repositorio") {
             steps {
-                sh git clone 'https://github.com/edgaregonzalez/nodejs-helloworld-api.git'
+                git clone 'https://github.com/edgaregonzalez/nodejs-helloworld-api.git'
             }
         }
         stage("Instalar Dependencias") {
@@ -12,10 +12,22 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage("Ejecutar Test") {
+        stage("Ejecutar Pruebas") {
             steps {
                 sh 'npm test'
-            }   
+            }
+        }
+        stage('Iniciar Aplicación') {
+            steps {
+                sh 'npm start &'
+            }
+        }
+         stage('Probar Aplicación') {
+            steps {
+                // Esperar unos segundos para que la aplicación se inicie completamente
+                sleep time: 30, unit: 'SECONDS'
+                sh 'curl http://localhost:3000'
+            }
         }
     }
 }
