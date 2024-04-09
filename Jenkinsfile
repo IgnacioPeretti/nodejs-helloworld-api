@@ -2,9 +2,9 @@ pipeline {
     agent any
     
     stages {
-        stage("Clonammos el repositorio") {
+        stage("Clonamos el repositorio") {
             steps {
-                git 'https://github.com/edgaregonzalez/nodejs-helloworld-api.git'
+                git clone 'https://github.com/edgaregonzalez/nodejs-helloworld-api.git'
             }
         }
         stage("Instalar Dependencias") {
