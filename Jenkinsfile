@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     stages {
         stage("Clonamos el repositorio") {
             steps {
@@ -12,7 +12,7 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage("Ejecutar Pruebas") {
+        stage("Ejecutar Test") {
             steps {
                 sh 'npm test'
             }   
