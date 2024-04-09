@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("Clonamos el repositorio") {
             steps {
-                git clone 'https://github.com/edgaregonzalez/nodejs-helloworld-api.git'
+                sh git clone 'https://github.com/edgaregonzalez/nodejs-helloworld-api.git'
             }
         }
         stage("Instalar Dependencias") {
