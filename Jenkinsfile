@@ -3,7 +3,7 @@ pipeline {
     
     stages {
 
-        stage("Instalando Dependencias") {
+        stage("Instalar Dependencias") {
             steps {
                 sh 'npm install'
             }
