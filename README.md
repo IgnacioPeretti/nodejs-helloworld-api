@@ -33,17 +33,18 @@ curl http://localhost:3000
 ## GUIA DETALLADA DE COMO UTILIZAR EL JOB DE JENKINS.
 
 1. **INSTALAR NGROK**
-   Comenzamos instalando NGROK, podremos encontrar una guía en [su sitio web](https://ngrok.com/download), donde ejecutaremos una serie de comandos para completar la instalación.
+
+     - Comenzamos instalando NGROK, podremos encontrar una guía en [su sitio web](https://ngrok.com/download), donde ejecutaremos una serie de comandos para completar la instalación.
 
    
-2. **Ejecutar NGROK para obtener nuestro entorno:**
+3. **Ejecutar NGROK para obtener nuestro entorno:**
    - Abre una terminal y ejecuta el siguiente comando para levantar Jenkins localmente a través de ngrok:
      ```sh
      ngrok http http://localhost:8080
      ```
    - Esto nos dará un enlace público que puedes utilizar para acceder a Jenkins.
 
-3. **Accedemos a jenkins con NGROK y configuramos:**
+4. **Accedemos a jenkins con NGROK y configuramos:**
    - Abre tu navegador web y dirígete al enlace proporcionado por ngrok. Por ejemplo:
      ```
      https://d56e-152-170-177-208.ngrok-free.app/
@@ -55,7 +56,7 @@ curl http://localhost:3000
 
      Completamos poniendo la ubicación de nuestro repositorio y nuestras credenciales.
 
-4. **Configuraramos el webhook en GitHub:**
+5. **Configuramos el webhook en GitHub:**
    - En nuestro repositorio de GitHub, nos diriimos a la  sección de Configuración (Settings) y luego a Webhooks.
       Agregamos la URL que nos dió NGROK para ingresar a jenkins y le tendremos que sumar esto `/github-webhook/`.
      Quedaría así: 
@@ -65,9 +66,9 @@ curl http://localhost:3000
    - Seleccionamos los eventos que tendrá el webhook, en este caso "push" y "pull request".
 
 
-5. **Instalar NVM para NODEJS**
+6. **Instalar NVM para NODEJS**
 
-  - Para instalar NVM utilizaremos una guía que podemos enncontrar en este [enlace](https://nodejs.org/en/download/package-manager/)
+  - Para instalar NVM utilizaremos una guía que podemos enncontrar en este [enlace](https://nodejs.org/en/download/package-manager/),
     esto nos permite correr distintas versiones de nodejs en nuestro entorno local.
 
 
